@@ -1,104 +1,112 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox Tutorial</title>
-  <link href="./reset.css" type="stylesheet" />
-  <style>
-    :root {
-      --primary-color: blue; /* Define a primary color variable for easy reuse */
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Tutorial</title>
+    <link href="./reset.css" type="stylesheet" />
+    <style>
+          :root {
+            --primary-color: green; /* Define a primary color variable for easy reuse */
+      reuse */
+      dy {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            border: 2px dashed var(--primary-color)
+          }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      border: 2px dashed var(--primary-color)
-    }
+          .container {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+            /* flex-direction: column; /*CSS way of doing */
+            border: 2px solid #000;
+            height: 300px;
+            margin-bottom: 40px; /* Increased margin for spacing */
+          }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
-      /* flex-direction: column; /*CSS way of doing */
-      border: 2px solid #000;
-      height: 300px;
-      margin-bottom: 40px; /* Increased margin for spacing */
-    }
+          .box {
+            background-color: #76b5c5;
+            border: 2px solid #444;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 5px;
+          }
+          h2, h3 {
+            margin-top: 40px; /* Increased margin for spacing */
+          }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox CSS Tutorial</h1>
 
-    .box {
-      background-color: #76b5c5;
-      border: 2px solid #444;
-      color: white;
-      padding: 20px;
-      font-size: 1.2rem;
-      text-align: center;
-      margin: 5px;
-    }
-    h2, h3 {
-      margin-top: 40px; /* Increased margin for spacing */
-    }
-  </style>
-</head>
-<body>
-  <h1>Flexbox CSS Tutorial</h1>
+    <h2>1. Basic Flexbox Container</h2>
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
 
-  <h2>1. Basic Flexbox Container</h2>
-  <div class="container">
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
-  </div>
+    <h2>2. Flex Direction</h2>
+    <div class="container" style="flex-direction: column">
+      <!--/* can use row or column which looks like block value of position but with flexible functions. (inline way of doing) */ -->
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
 
-  <h2>2. Flex Direction</h2>
-   <div class="container" style="flex-direction: column;">  <!--/* can use row or column which looks like block value of position but with flexible functions. (inline way of doing) */ -->
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
-  </div>
+    <h2>3. Justify Content</h2>
+    <div class="container" style="justify-content: space-between">
+      <!--/* space-around or space-between to add spaces between or around boxes. useful for navigational elements: logo, menu, social media icons, log in - log out buttons. Great way to arrange your layout horizontally without using precise pixels/calculations. as it does automatically after you type it */ -->
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
 
-  <h2>3. Justify Content</h2>
-   <div class="container" style="justify-content: space-between;"> <!--/* space-around or space-between to add spaces between or around boxes. useful for navigational elements: logo, menu, social media icons, log in - log out buttons. Great way to arrange your layout horizontally without using precise pixels/calculations. as it does automatically after you type it */ -->
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
-  </div>
+    <h2>4. Align Items</h2>
+    <div class="container" style="align-items: center; justify-content: center">
+      <!--/* align-items: center; to align items vertically in the center of the container, similarly with flex-end and flex-start puts it at the bottom and top respectively. We can even use 2nd property, justify-content: center; you will have absolute styling in the center*/ -->
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
 
-  <h2>4. Align Items</h2>
-  <div class="container" style="align-items: center; justify-content: center;"> <!--/* align-items: center; to align items vertically in the center of the container, similarly with flex-end and flex-start puts it at the bottom and top respectively. We can even use 2nd property, justify-content: center; you will have absolute styling in the center*/ -->
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
-  </div>
+    <h2>5. Flex Wrap</h2>
+    <div class="container" style="flex-wrap: wrap">
+      <!--/* flex-wrap: wrap; to allow items to wrap onto multiple lines. This is useful when you have a lot of items and want them to stack vertically when there isn't enough horizontal space. Avoid using media query*/ -->
+      <div class="box" style="flex: 1 1 100px">Box 1</div>
+      <div class="box" style="flex: 1 1 100px">Box 2</div>
+      <div class="box" style="flex: 1 1 100px">Box 3</div>
+      <div class="box" style="flex: 1 1 100px">Box 4</div>
+    </div>
 
-  <h2>5. Flex Wrap</h2>
-  <div class="container" style="flex-wrap: wrap;"> <!--/* flex-wrap: wrap; to allow items to wrap onto multiple lines. This is useful when you have a lot of items and want them to stack vertically when there isn't enough horizontal space. Avoid using media query*/ -->
-    <div class="box" style="flex: 1 1 100px;">Box 1</div>
-    <div class="box" style="flex: 1 1 100px;">Box 2</div>
-    <div class="box" style="flex: 1 1 100px;">Box 3</div>
-    <div class="box" style="flex: 1 1 100px;">Box 4</div>
-  </div>
+    <h2>6. Align Content</h2>
+    <div
+      class="container"
+      style="flex-wrap: wrap; align-content: space-between"
+    >
+      <!--/* align-content: space-between or space-around; to distribute space between lines of items in a flex container. This is useful when you have multiple lines of items and want to control the spacing between those lines. */ -->
+      <div class="box" style="flex: 1 1 100px">Box 1</div>
+      <div class="box" style="flex: 1 1 100px">Box 2</div>
+      <div class="box" style="flex: 1 1 100px">Box 3</div>
+      <div class="box" style="flex: 1 1 100px">Box 4</div>
+    </div>
 
-  <h2>6. Align Content</h2>
-  <div class="container" style="flex-wrap: wrap; align-content: space-between;"> <!--/* align-content: space-between or space-around; to distribute space between lines of items in a flex container. This is useful when you have multiple lines of items and want to control the spacing between those lines. */ -->
-    <div class="box" style="flex: 1 1 100px;">Box 1</div>
-    <div class="box" style="flex: 1 1 100px;">Box 2</div>
-    <div class="box" style="flex: 1 1 100px;">Box 3</div>
-    <div class="box" style="flex: 1 1 100px;">Box 4</div>
-  </div>
+    <h2>7. Flex Grow, Shrink, and Basis</h2>
+    <div class="container">
+      <div class="box" style="flex-grow: 3">Box 1</div>
+      <!--/* flex-grow: 3; to make this box grow 3 times larger than the others. Flex-grow, shrink and basis are used to control how items grow, shrink, and their initial size in a flex container. */ -->
+      <div class="box" style="flex-shrink: 2">Box 2</div>
+      <div class="box" style="flex-grow: 100px">Box 3</div>
+    </div>
 
-  <h2>7. Flex Grow, Shrink, and Basis</h2>
-  <div class="container">
-    <div class="box" style="flex-grow: 3;">Box 1</div> <!--/* flex-grow: 3; to make this box grow 3 times larger than the others. Flex-grow, shrink and basis are used to control how items grow, shrink, and their initial size in a flex container. */ -->
-    <div class="box" style="flex-shrink: 2;">Box 2</div>
-    <div class="box" style="flex-grow: 100px;">Box 3</div>
-  </div>
-
-  <h2>8. Order</h2>
-  <div class="container">
-    <div class="box" style="order: 3;">Box 1</div> <!--/* order: 3; to change the order of the boxes. The default order is 0, so you can use positive or negative values to rearrange items. */ -->
-    <div class="box" style="order: 2;">Box 2</div>
-    <div class="box" style="order: 1;">Box 3</div>
-  </div>
-</body>
+    <h2>8. Order</h2>
+    <div class="container">
+      <div class="box" style="order: 3">Box 1</div>
+      <!--/* order: 3; to change the order of the boxes. The default order is 0, so you can use positive or negative values to rearrange items. */ -->
+      <div class="box" style="order: 2">Box 2</div>
+      <div class="box" style="order: 1">Box 3</div>
+    </div>
+  </body>
 </html>
