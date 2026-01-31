@@ -1,3 +1,3 @@
-# Flexbox layout
+# Git Version Control
 
-> This is a flexbox layout demo page for Frontend
+> This is a Git Version Control demo page for Frontend
