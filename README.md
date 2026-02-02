@@ -1,3 +1,3 @@
-# Git Version Control #take3
+# Flexbox Layout Demo
 
-> This is a Git Version Control demo page for Frontend
+> This is a Flexbox Layout demo page for Frontend
